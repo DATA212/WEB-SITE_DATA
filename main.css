@@ -1,0 +1,369 @@
+:root {
+    /* text color */
+    --main-text-color: #ddd;
+    --secondary-text-color: #222;
+    --muted-text-color: #7f7f7f;
+    --accent-color: #0ce5cc;
+    /* background color */
+    --main-background-color: #222;
+    --secondary-background-color: #ddd;
+    --muted-background-color: #7f7f7f;
+    --crimson-background-color: #ca3b5a;
+    --yellow-background-color: #d3b246;
+    --accent-background-color: #0ce5cc;
+    --accent-muted-background-color: #05564d;
+    /* additional-color */
+    --icon-fill: #ddd;
+    /* :focus:hover effects */
+    --general-transition-effect: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* font-family */
+    --main-font: "Arial";
+    --secondary-font: "Arial";
+}
+
+*,
+::before,
+::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+}
+
+body {
+    font-family: var(--main-font);
+    color: var(--main-text-color);
+    background-color: var(--main-background-color);
+    margin: 0;
+}
+
+body.is-hidden {
+    overflow-y: hidden;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+// Plotly JS
+.dataframe {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: rgb(58, 58, 58);
+    row-gap: 15px;
+    border-radius: 3px;
+}
+@media screen and (min-width: 640px) {
+    .dataframe {
+        display: grid;
+        row-gap: 15px;
+        padding: 15px 0;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .dataframe {
+        padding: 30px;
+    }
+}
+@media screen and (min-width: 1800px) {
+    .dataframe {
+        grid-template-columns: repeat(2, 1fr);
+        -webkit-column-gap: 15px;
+        -moz-column-gap: 15px;
+        column-gap: 15px;
+    }
+}
+
+.dataframeTitle {
+    padding: 15px;
+    border-radius: 3px;
+    background-color: #333;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 30px;
+}
+@media screen and (min-width: 960px) {
+    .dataframeTitle {
+        padding: 25px;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1799.98px) {
+    .dataframeTitle {
+        grid-column: span 2;
+    }
+}
+
+.dataframeTitle > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dataframeTitle p {
+    font-size: 16px;
+    font-weight: bold;
+}
+@media screen and (min-width: 480px) {
+    .dataframeTitle p {
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 960px) {
+    .dataframeTitle p {
+        font-size: 36px;
+    }
+}
+
+.dataframeTitle span {
+    font-size: 10px;
+}
+@media screen and (min-width: 480px) {
+    .dataframeTitle span {
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 960px) {
+    .dataframeTitle span {
+        font-size: 14px;
+    }
+}
+
+.dataframeTitle label {
+    font-size: 12px;
+    font-weight: bold;
+}
+@media screen and (min-width: 960px) {
+    .dataframeTitle label {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+}
+
+.dataframeData {
+    padding: 20px 10px;
+    background-color: #333;
+}
+@media screen and (min-width: 1200px) {
+    .dataframeData {
+        padding: 20px;
+    }
+}
+
+.dataframeData th,
+.dataframeData td {
+    font-size: 14px;
+    line-height: 28px;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+@media screen and (min-width: 480px) {
+    .dataframeData th,
+    .dataframeData td {
+        font-size: 16px;
+        line-height: 32px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .dataframeData th,
+    .dataframeData td {
+        font-size: 18px;
+        line-height: 35px;
+        padding: 5px 20px;
+    }
+}
+
+.dataframeData tr td:not(:last-child) {
+    border-right: 1px solid #ddd;
+}
+
+@media screen and (max-width: 639.98px) {
+    .dataframeData tr td:nth-child(n + 3),
+    .dataframeData tr th:nth-child(n + 3) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 959.98px) {
+    .dataframeData tr td:nth-child(n + 4),
+    .dataframeData tr th:nth-child(n + 4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 639.98px) {
+    .dataframeData tr td:nth-child(2) {
+        border-right: none;
+    }
+}
+
+@media screen and (max-width: 959.98px) {
+    .dataframeData tr td:nth-child(3) {
+        border-right: none;
+    }
+}
+
+.td-data {
+    color: rgb(255, 195, 39);
+}
+
+.td-data:hover {
+    background-color: rgb(58, 58, 58);
+}
+
+table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+.tabs-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr;
+}
+@media screen and (min-width: 1200px) {
+    .tabs-container {
+        grid-template-columns: 2fr 1fr;
+        grid-column: span 2;
+    }
+}
+
+.tab-content {
+    min-height: 250px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 3px;
+    opacity: 1;
+}
+@media screen and (min-width: 960px) {
+    .tab-content {
+        min-height: 350px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .tab-content {
+        min-height: 200px;
+    }
+}
+
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+@media screen and (min-width: 640px) {
+    .tabs {
+        padding: 0 10px;
+    }
+}
+@media screen and (min-width: 960px) {
+    .tabs {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media screen and (min-width: 1200px) {
+    .tabs {
+        display: none;
+    }
+}
+
+.tab-button {
+    text-transform: lowercase;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 30px;
+    background-color: #333;
+    border: none;
+    border-radius: 3px;
+    -webkit-transition: color var(--general-transition-effect),
+        background-color var(--general-transition-effect);
+    transition: color var(--general-transition-effect),
+        background-color var(--general-transition-effect);
+}
+@media screen and (min-width: 640px) {
+    .tab-button {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 960px) {
+    .tab-button {
+        font-size: 16px;
+    }
+}
+
+.tab-button.active {
+    background-color: #ddd;
+    color: var(--secondary-text-color);
+}
+
+.tab-button:hover,
+.tab-button:focus {
+    background-color: #ddd;
+    color: var(--secondary-text-color);
+}
+
+.dailyFrame {
+    grid-area: 1/1/4/1;
+}
