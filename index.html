@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="stylesheet"
+            href="./main.css"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="dataframe">
+            <div class="dataframeTitle">
+                <div>
+                    <p>SOLAR ENERGY PRODUCTION</p>
+                    <span>DESIGNED BY DATA212</span>
+                </div>
+                <div>
+                    <label for="">Energy tariff, $/kWh:</label
+                    ><input
+                        id="tariff"
+                        type="number"
+                        value="0.125"
+                        step="0.125"
+                    /><label for="">Emission factor, kgCO2/kWh:</label
+                    ><input
+                        id="emission"
+                        type="number"
+                        value="0.25"
+                        step="0.25"
+                    />
+                </div>
+            </div>
+            <table class="dataframeData">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>Total</th>
+                        <th>This Month</th>
+                        <th>This Week</th>
+                        <th>Today</th>
+                    </tr>
+                    <tr>
+                        <td>Energy</td>
+                        <td
+                            class="td-data"
+                            data-column="1"
+                            data-row="1"
+                        ></td>
+                        <td
+                            class="td-data"
+                            data-column="2"
+                            data-row="1"
+                        ></td>
+                        <td
+                            class="td-data"
+                            data-column="3"
+                            data-row="1"
+                        ></td>
+                        <td
+                            class="td-data"
+                            data-column="4"
+                            data-row="1"
+                        ></td>
+                    </tr>
+                    <tr>
+                        <td>Saving</td>
+                        <td
+                            class="td-data"
+                            data-column="1"
+                            data-row="2"
+                        ></td>
+                        <td
+                            class="td-data"
+                            data-column="2"
+                            data-row="2"
+                        ></td>
+                        <td
+                            class="td-data"
+                            data-column="3"
+                            data-row="2"
+                        ></td>
+                        <td
+                            class="td-data"
+                            data-column="4"
+                            data-row="2"
+                        ></td>
+                    </tr>
+                    <tr>
+                        <td>Emissions</td>
+                        <td
+                            class="td-data"
+                            data-column="1"
+                            data-row="3"
+                        ></td>
+                        <td
+                            class="td-data"
+                            data-column="2"
+                            data-row="3"
+                        ></td>
+                        <td
+                            class="td-data"
+                            data-column="3"
+                            data-row="3"
+                        ></td>
+                        <td
+                            class="td-data"
+                            data-column="4"
+                            data-row="3"
+                        ></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="tabs">
+                <button
+                    class="tab-button active"
+                    data-tab="seasonalFrame"
+                >
+                    Seasonal</button
+                ><button
+                    class="tab-button"
+                    data-tab="dailyFrame"
+                >
+                    Daily</button
+                ><button
+                    class="tab-button"
+                    data-tab="monthlyFrame"
+                >
+                    Monthly</button
+                ><button
+                    class="tab-button"
+                    data-tab="hourlyFrame"
+                >
+                    Hourly
+                </button>
+            </div>
+            <div class="tabs-container">
+                <div
+                    class="tab-content seasonalFrame"
+                    id="seasonalFrame"
+                ></div>
+                <div
+                    class="tab-content dailyFrame"
+                    id="dailyFrame"
+                ></div>
+                <div
+                    class="tab-content monthlyFrame"
+                    id="monthlyFrame"
+                ></div>
+                <div
+                    class="tab-content hourlyFrame"
+                    id="hourlyFrame"
+                ></div>
+            </div>
+        </div>
+
+        <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+        <script src="./slider.js"></script>
+    </body>
+</html>
